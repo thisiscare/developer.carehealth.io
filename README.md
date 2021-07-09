@@ -1,1 +1,1 @@
-![](care-round.png)
+![](care-logo.jpg)

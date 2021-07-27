@@ -1,0 +1,933 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Care – API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-aa87a48e.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-a9fde460.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-53c1a510.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#covid-19-test-products" class="toc-h1 toc-link" data-title="Covid-19 Test Products">Covid-19 Test Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-available-test-types" class="toc-h2 toc-link" data-title="Get All Available Test Types">Get All Available Test Types</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#test-facilities-amp-available-slots" class="toc-h1 toc-link" data-title="Test Facilities &amp; Available Slots">Test Facilities &amp; Available Slots</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-testing-facilities" class="toc-h2 toc-link" data-title="Get Testing Facilities">Get Testing Facilities</a>
+                  </li>
+                  <li>
+                    <a href="#get-available-time-slots-for-covid-19-tests" class="toc-h2 toc-link" data-title="Get Available Time Slots for Covid-19 Tests">Get Available Time Slots for Covid-19 Tests</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#referral-codes" class="toc-h1 toc-link" data-title="Referral Codes">Referral Codes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#generate-referral-code-preview" class="toc-h2 toc-link" data-title="Generate Referral Code (Preview)">Generate Referral Code (Preview)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#book-a-covid-19-test" class="toc-h1 toc-link" data-title="Book a Covid-19 Test">Book a Covid-19 Test</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#book-a-covid-19-test-appointment-preview" class="toc-h2 toc-link" data-title="Book a Covid-19 Test Appointment (Preview)">Book a Covid-19 Test Appointment (Preview)</a>
+                  </li>
+                  <li>
+                    <a href="#qr-code-book-a-covid-19-test-appointment-preview" class="toc-h2 toc-link" data-title="QR-Code: Book a Covid-19 Test Appointment (Preview)">QR-Code: Book a Covid-19 Test Appointment (Preview)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://api.stoplight.io/v1/versions/bjxPhx5Ff4Zr7JrGP/export/oas.json' target='_new'>Open API Specification</a></li>
+            <li><a href='https://editor.swagger.io/?url=https://api.stoplight.io/v1/versions/bjxPhx5Ff4Zr7JrGP/export/oas.json' target='_new'>Swagger Editor – Open API Specification</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to our Care API Sandbox! You can use our API to access API endpoints, which can get information on Covid-19 Tests, clinics, and appointment booking.</p>
+
+<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+
+<p>This is an early version of a developer portal and we appreciate feedback. Do get in touch!</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, you need an API Key.</p>
+</blockquote>
+
+<p>Care uses API keys to allow access to the API. You can get an Kittn API key from our partner team.</p>
+
+<p>The APIs expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>apikey: 0433D373-88C3-44DE-B160-2AF5837CF5BD</code></p>
+
+<aside class="notice">
+You must replace <code>0433D373-88C3-44DE-B160-2AF5837CF5BD</code> with your personal API key.
+</aside>
+<h1 id='covid-19-test-products'>Covid-19 Test Products</h1><h2 id='get-all-available-test-types'>Get All Available Test Types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/test-types'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREDPT_PCR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"testItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"PREDPT_PCR"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PCR Nasal Swab Test"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A long nasal swab will be inserted into the nostril to collect fluid from the back of the nose. Swabbing will be done by a healthcare professional."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"predeparture"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mark"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREDPT_IGM"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"testItems"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"PREDPT_IGM"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Serology (IgM) Test"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A sample of blood will be taken for this test. Blood sample collection will be done by a healthcare professional."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"predeparture"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"mark"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>List all available Covid-19 test types.</p>
+
+<p>The optional query parameter &#39;category&#39; allows you to get only tests that are available for &#39;predeparture&#39;, &#39;onarrival&#39;, &#39;nontravel&#39;.</p>
+<h3 id='http-requests'>HTTP Requests</h3>
+<p><code>GET /test-types</code><br>
+<code>GET /test-types?category=nontravel</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>category</td>
+<td>no</td>
+<td>&#39;predeparture&#39;, &#39;onarrival&#39;, or &#39;nontravel&#39;</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This endpoint is performing real requests towards our backend.
+</aside>
+<h1 id='test-facilities-amp-available-slots'>Test Facilities &amp; Available Slots</h1><h2 id='get-testing-facilities'>Get Testing Facilities</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/facilities'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">103.989441</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.359167</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://doctoroneworld-dev.s3.ap-southeast-1.amazonaws.com/public/file-1610103010209?AWSAccessKeyId=AKIAJZ6RF4WFFN2RROHQ&amp;Expires=1634044421&amp;Signature=Wbh2OivZZm6srPqzaIG8lTbsQfI%3D"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"thumbnail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://doctoroneworld-dev.s3.ap-southeast-1.amazonaws.com/public/file-1610103002607?AWSAccessKeyId=AKIAJZ6RF4WFFN2RROHQ&amp;Expires=1634044421&amp;Signature=tcTYL8nTwnr0U5kWethe459YdS4%3D"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"clinicCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CovidTest_Clinic_SG"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asia/Singapore"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slotLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"slotMinute"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Care health(Only for test)555"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qa@carehealth.io"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"contact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+65900000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"585 North Bridge Rd, Singapore 188770"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SGD"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"openingHours"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24/7"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Singapore"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SG"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"appointmentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CARE_HEALTH"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deletedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"null"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-23T10:10:10.000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-05-11T12:57:42.000Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This API lists all clinics and facilities that offer Covid-19 tests.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET /facilities</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>none</td>
+<td>no</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This endpoint is performing real requests towards our backend.
+</aside>
+<h2 id='get-available-time-slots-for-covid-19-tests'>Get Available Time Slots for Covid-19 Tests</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/slots?clinicCode=G141&amp;date=2021-07-15'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+ </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"timeZone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asia/Singapore"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"availableSlot"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RMG"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-15"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"slotId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RMG_10460782"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"startTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14:45"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"endTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15:00"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RMG"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-15"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"slotId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RMG_10460783"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"startTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"endTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15:15"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RMG"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-15"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"slotId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RMG_10460784"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"availability"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"startTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15:15"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"endTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15:30"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>Get the available time slots for Covid-19 Tests at a clinic for a specific day.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET /slots/clinicCode=G141&amp;date=2021-07-15</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clinicCode</td>
+<td>yes</td>
+<td>valid clinic code. Example: G141</td>
+</tr>
+<tr>
+<td>date</td>
+<td>yes</td>
+<td>example: 2021-07-15</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This endpoint is performing real requests towards our backend.
+</aside>
+<h1 id='referral-codes'>Referral Codes</h1><h2 id='generate-referral-code-preview'>Generate Referral Code (Preview)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox02.carehealth.io/v1/covid19-test/refcode?product=PREDP_PCR&amp;max=1&amp;discount=100&amp;partnerid=SM29X'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CPX-B6US6XYW"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>Create a referral code for Covid-19 that users can redeem inside our app.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST /refcode</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product</td>
+<td>yes</td>
+<td>valid product code, e.g. PREDPT_PCR</td>
+</tr>
+<tr>
+<td>nax</td>
+<td>yes</td>
+<td>how many times can this code be used</td>
+</tr>
+<tr>
+<td>discount</td>
+<td>yes</td>
+<td>how much discount in percent will the user enjoy when using this code</td>
+</tr>
+<tr>
+<td>partnerid</td>
+<td>yes</td>
+<td>your unique partner ID for chargeback</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This API is in an PREVIEW stage. The endpoint is responding with mock data.
+</aside>
+<h1 id='book-a-covid-19-test'>Book a Covid-19 Test</h1><h2 id='book-a-covid-19-test-appointment-preview'>Book a Covid-19 Test Appointment (Preview)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/appointment'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
+  <span class="nt">-d</span> <span class="s1">'{
+  "clinicCode": "CovidTest_Clinic_SG",
+  "appointmentSlotId": "RMG_9361621",
+  "testTime": "2020-12-11T09:45:00.000Z",
+  "name": "John Doe",
+  "idType": "PASSPORT",
+  "idNumber": "X918277H",
+  "nationality": "SG",
+  "gender": "male",
+  "mobileNumber": "+658123456",
+  "email": "johndoe@gmail.com",
+  "dateOfBirth": "1962-08-05T00:00:00.000Z",
+  "timeZone": "Asia/Singapore",
+  "prepaid": "true",
+  "bizId": "SM29X"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APPT-B6US6XYW"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>Book a Covid-19 Test at a facility.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST /appointment</code></p>
+<h3 id='request-body-json'>Request Body (JSON)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clinicCode</td>
+<td>yes</td>
+<td>a valid clinic code, e.g. &quot;CovidTest_Clinic_SG&quot;</td>
+</tr>
+<tr>
+<td>appointmentSlotId</td>
+<td>yes</td>
+<td>a valid slot id, e.g. &quot;RMG_9361621&quot;</td>
+</tr>
+<tr>
+<td>testTime</td>
+<td>yes</td>
+<td>the time allocated to this slot, e.g. &quot;2020-12-11T09:45:00.000Z&quot;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>yes</td>
+<td>the name of the patient, e.g.&quot;John Wang&quot;</td>
+</tr>
+<tr>
+<td>idType</td>
+<td>yes</td>
+<td>the type of ID the patient will produce for identification. Valid types are: NRIC, PASSPORT, FIN, and HKID</td>
+</tr>
+<tr>
+<td>idNumber</td>
+<td>yes</td>
+<td>the ID number, e.g. &quot;X0861234B&quot;</td>
+</tr>
+<tr>
+<td>nationality</td>
+<td>yes</td>
+<td>the patient&#39;s nationality, e.g. &quot;SG&quot;</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>yes</td>
+<td>&quot;male&quot;, &quot;female&quot;, &quot;unknown&quot;</td>
+</tr>
+<tr>
+<td>mobileNumber</td>
+<td>yes</td>
+<td>e.g. &quot;+6581234565&quot;</td>
+</tr>
+<tr>
+<td>email</td>
+<td>yes</td>
+<td>e.g. &quot;johndoe@gmail.com&quot;</td>
+</tr>
+<tr>
+<td>dateOfBirth</td>
+<td>yes</td>
+<td>e.g. &quot;1992-08-05T00:00:00.000Z&quot;</td>
+</tr>
+<tr>
+<td>timeZone</td>
+<td>yes</td>
+<td>e.g. &quot;Asia/Singapore&quot;</td>
+</tr>
+<tr>
+<td>prepaid</td>
+<td>yes</td>
+<td>is the test pre-paid or does the patient have to pay at the clinic? e.g. &quot;true&quot;, &quot;false&quot;</td>
+</tr>
+<tr>
+<td>bizId</td>
+<td>yes</td>
+<td>your partner ID</td>
+</tr>
+</tbody></table>
+<h2 id='qr-code-book-a-covid-19-test-appointment-preview'>QR-Code: Book a Covid-19 Test Appointment (Preview)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/appointmentqr'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'accept: application/png'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
+  <span class="nt">-d</span> <span class="s1">'{
+  "clinicCode": "CovidTest_Clinic_SG",
+  "appointmentSlotId": "RMG_9361621",
+  "testTime": "2020-12-11T09:45:00.000Z",
+  "name": "John Doe",
+  "idType": "PASSPORT",
+  "idNumber": "X918277H",
+  "nationality": "SG",
+  "gender": "male",
+  "mobileNumber": "+658123456",
+  "email": "johndoe@gmail.com",
+  "dateOfBirth": "1962-08-05T00:00:00.000Z",
+  "timeZone": "Asia/Singapore",
+  "prepaid": "true",
+  "bizId": "SM29X"
+}'</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns a PNG image.</p>
+</blockquote>
+
+<p><img src="https://thisiscare.github.io/slate/images/qr-04cd18d4.jpg" alt="" /></p>
+
+<p>Book a Covid-19 Test at a facility and receive a QR code.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST /appointmentqr</code></p>
+<h3 id='request-body-json-2'>Request Body (JSON)</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>clinicCode</td>
+<td>yes</td>
+<td>a valid clinic code, e.g. &quot;CovidTest_Clinic_SG&quot;</td>
+</tr>
+<tr>
+<td>appointmentSlotId</td>
+<td>yes</td>
+<td>a valid slot id, e.g. &quot;RMG_9361621&quot;</td>
+</tr>
+<tr>
+<td>testTime</td>
+<td>yes</td>
+<td>the time allocated to this slot, e.g. &quot;2020-12-11T09:45:00.000Z&quot;</td>
+</tr>
+<tr>
+<td>name</td>
+<td>yes</td>
+<td>the name of the patient, e.g.&quot;John Wang&quot;</td>
+</tr>
+<tr>
+<td>idType</td>
+<td>yes</td>
+<td>the type of ID the patient will produce for identification. Valid types are: NRIC, PASSPORT, FIN, and HKID</td>
+</tr>
+<tr>
+<td>idNumber</td>
+<td>yes</td>
+<td>the ID number, e.g. &quot;X0861234B&quot;</td>
+</tr>
+<tr>
+<td>nationality</td>
+<td>yes</td>
+<td>the patient&#39;s nationality, e.g. &quot;SG&quot;</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>yes</td>
+<td>&quot;male&quot;, &quot;female&quot;, &quot;unknown&quot;</td>
+</tr>
+<tr>
+<td>mobileNumber</td>
+<td>yes</td>
+<td>e.g. &quot;+6581234565&quot;</td>
+</tr>
+<tr>
+<td>email</td>
+<td>yes</td>
+<td>e.g. &quot;johndoe@gmail.com&quot;</td>
+</tr>
+<tr>
+<td>dateOfBirth</td>
+<td>yes</td>
+<td>e.g. &quot;1992-08-05T00:00:00.000Z&quot;</td>
+</tr>
+<tr>
+<td>timeZone</td>
+<td>yes</td>
+<td>e.g. &quot;Asia/Singapore&quot;</td>
+</tr>
+<tr>
+<td>prepaid</td>
+<td>yes</td>
+<td>is the test pre-paid or does the patient have to pay at the clinic? e.g. &quot;true&quot;, &quot;false&quot;</td>
+</tr>
+<tr>
+<td>bizId</td>
+<td>yes</td>
+<td>your partner ID</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This API is in an PREVIEW stage. The endpoint is responding with mock data.
+</aside>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">
+Do note: our API Platform is at an early stage, and we're still improving the developer experience.
+</aside>
+
+<p>The APIs uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The resource requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified resource could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a resource with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The resource requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many resources! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -19,7 +19,7 @@ code_clipboard: true
 
 # Introduction
 
-Welcome to our Care API Sandbox! You can use our API to access API endpoints, which can get information on Covid-19 Tests, clinics, and appointment booking.
+Welcome to our Care API Sandbox! You can use it to explore how our API endpoints work, which at the moment revolve around information on Covid-19 Tests, clinics, and appointment booking. Do keep in mind that this is a **PREVIEW** version.
 
 We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 

@@ -46,7 +46,7 @@ You must replace <code>0433D373-88C3-44DE-B160-2AF5837CF5BD</code> with your per
 
 ```shell
 curl -X 'GET' \
-  'https://api-sandbox01.carehealth.io/v1/covid19-test/test-types' \
+  'https://api-sandbox02.carehealth.io/v1/covid19-test/test-types' \
   -H 'accept: application/json' \
   -H 'apikey: XXXX'
 ```
@@ -110,7 +110,7 @@ This endpoint is performing real requests towards our backend.
 
 ```shell
 curl -X 'GET' \
-  'https://api-sandbox01.carehealth.io/v1/covid19-test/facilities' \
+  'https://api-sandbox02.carehealth.io/v1/covid19-test/facilities' \
   -H 'accept: application/json' \
   -H 'apikey: XXXX'
 ```
@@ -174,7 +174,7 @@ This endpoint is performing real requests towards our backend.
 
 ```shell
 curl -X 'GET' \
-  'https://api-sandbox01.carehealth.io/v1/covid19-test/slots?clinicCode=G141&date=2021-07-15' \
+  'https://api-sandbox02.carehealth.io/v1/covid19-test/slots?clinicCode=G141&date=2021-07-15' \
   -H 'accept: application/json' \
   -H 'apikey: XXXX'
 ```
@@ -286,7 +286,7 @@ This API is in an PREVIEW stage. The endpoint is responding with mock data.
 
 ```shell
 curl -X 'POST' \
-  'https://api-sandbox01.carehealth.io/v1/covid19-test/appointment' \
+  'https://api-sandbox02.carehealth.io/v1/covid19-test/appointment' \
   -H 'accept: application/json' \
   -H 'apikey: XXXX'
   -d '{
@@ -349,7 +349,7 @@ bizId | yes | your partner ID
 
 ```shell
 curl -X 'POST' \
-  'https://api-sandbox01.carehealth.io/v1/covid19-test/appointmentqr' \
+  'https://api-sandbox02.carehealth.io/v1/covid19-test/appointmentqr' \
   -H 'accept: application/png' \
   -H 'apikey: XXXX'
   -d '{

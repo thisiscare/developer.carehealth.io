@@ -30,7 +30,7 @@ This is an early version of a developer portal and we appreciate feedback. Do ge
 > To authorize, you need an API Key.
 
 
-Care uses API keys to allow access to the API. You can get an Kittn API key from our partner team.
+Care uses API keys to allow access to the API. You can get an API key from our partner team.
 
 The APIs expects for the API key to be included in all API requests to the server in a header that looks like the following:
 

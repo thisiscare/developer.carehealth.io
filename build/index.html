@@ -386,7 +386,7 @@
 You must replace <code>0433D373-88C3-44DE-B160-2AF5837CF5BD</code> with your personal API key.
 </aside>
 <h1 id='covid-19-test-products'>Covid-19 Test Products</h1><h2 id='get-all-available-test-types'>Get All Available Test Types</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/test-types'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox02.carehealth.io/v1/covid19-test/test-types'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
 </code></pre></div>
@@ -448,7 +448,7 @@ You must replace <code>0433D373-88C3-44DE-B160-2AF5837CF5BD</code> with your per
 This endpoint is performing real requests towards our backend.
 </aside>
 <h1 id='test-facilities-amp-available-slots'>Test Facilities &amp; Available Slots</h1><h2 id='get-testing-facilities'>Get Testing Facilities</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/facilities'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox02.carehealth.io/v1/covid19-test/facilities'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
 </code></pre></div>
@@ -512,7 +512,7 @@ This endpoint is performing real requests towards our backend.
 This endpoint is performing real requests towards our backend.
 </aside>
 <h2 id='get-available-time-slots-for-covid-19-tests'>Get Available Time Slots for Covid-19 Tests</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'GET'</span> <span class="se">\</span>
-  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/slots?clinicCode=G141&amp;date=2021-07-15'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox02.carehealth.io/v1/covid19-test/slots?clinicCode=G141&amp;date=2021-07-15'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
 </code></pre></div>
@@ -636,7 +636,7 @@ This endpoint is performing real requests towards our backend.
 This API is in an PREVIEW stage. The endpoint is responding with mock data.
 </aside>
 <h1 id='book-a-covid-19-test'>Book a Covid-19 Test</h1><h2 id='book-a-covid-19-test-appointment-preview'>Book a Covid-19 Test Appointment (Preview)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/appointment'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox02.carehealth.io/v1/covid19-test/appointment'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
   <span class="nt">-d</span> <span class="s1">'{
@@ -751,7 +751,7 @@ This API is in an PREVIEW stage. The endpoint is responding with mock data.
 </tr>
 </tbody></table>
 <h2 id='qr-code-book-a-covid-19-test-appointment-preview'>QR-Code: Book a Covid-19 Test Appointment (Preview)</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s1">'POST'</span> <span class="se">\</span>
-  <span class="s1">'https://api-sandbox01.carehealth.io/v1/covid19-test/appointmentqr'</span> <span class="se">\</span>
+  <span class="s1">'https://api-sandbox02.carehealth.io/v1/covid19-test/appointmentqr'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'accept: application/png'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'apikey: XXXX'</span>
   <span class="nt">-d</span> <span class="s1">'{
